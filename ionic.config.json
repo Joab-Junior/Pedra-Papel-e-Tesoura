@@ -1,0 +1,7 @@
+{
+  "name": "Jankenpon",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

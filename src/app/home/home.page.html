@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+
+  <ion-toolbar color="dark">
+
+    <ion-title> Jankenpon </ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-img src="../../assets/img/jokenpo.png"></ion-img>
+  <div class="ion-text-center" id="div-container">
+          
+    <h1> Escolha sua jogada </h1>
+
+    <div id="button-container">
+
+      <ion-button (click)="play(1)" shape="round" color="success">Pedra</ion-button>
+      <ion-button (click)="play(2)" shape="round"> Papel </ion-button>
+      <ion-button (click)="play(3)" shape="round" color="danger">Tesoura</ion-button>
+
+    </div>
+
+  </div>
+
+  <h1 class="ion-text-center">
+    
+    Computador escolheu: <br>
+
+    {{
+
+      randomNumber == 1 ? 'Pedra' : 
+      randomNumber == 2 ? 'Papel' : 
+      randomNumber == 3 ? 'Tesoura' : 
+      'escolhendo...'
+
+    }}
+
+  </h1>
+  
+
+  <ion-list>
+    <ion-item>Vitorias do jogador: {{ visibleVictory }}</ion-item>
+    <ion-item>Vitorias do computador: {{ visibleDefeat }}</ion-item>
+    <ion-item>Empate: {{ tie }}</ion-item>
+  </ion-list>
+
+  <div id="button-container">
+
+    <ion-button size="medium" (click)="showRoundWon()"> Rodadas vencidas </ion-button>
+    <ion-button size="medium" (click)="clearAll()"> Encerrar rodadas </ion-button>
+
+  </div>
+
+  <h1 #rounds class="ion-text-center"></h1>
+
+</ion-content>
